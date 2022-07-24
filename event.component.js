@@ -286,7 +286,7 @@ export default class Event extends Component {
               <div className="form-group">
                 <label htmlFor="startTime">Start Time</label>
                 <input
-                  type="text"
+                  type="time"
                   className="form-control"
                   id="startTime"
                   value={currentEvent.startTime}
@@ -294,10 +294,12 @@ export default class Event extends Component {
                 />
               </div>
 
+{/* first you have to convert all this to formik part then after that start the changes  */}
+
               <div className="form-group">
                 <label htmlFor="endTime">End Time</label>
                 <input
-                  type="text"
+                  type="time"
                   className="form-control"
                   id="endTime"
                   value={currentEvent.endTime}
@@ -321,7 +323,7 @@ export default class Event extends Component {
               <div className="form-group">
                 <label htmlFor="availability">Availability</label>
                 <input
-                  type="text"
+                  type="number" min="1" oninput="this.value=!!(this.value && Math.abs(this.value)>=0?Math.abs(this.value):null"
                   className="form-control"
                   id="availability"
                   value={currentEvent.availability}
@@ -332,7 +334,7 @@ export default class Event extends Component {
               <div className="form-group">
                 <label htmlFor="price">Price</label>
                 <input
-                  type="text"
+                  type="number" min="1" oninput="this.value=!!(this.value && Math.abs(this.value)>=0?Math.abs(this.value):null"
                   className="form-control"
                   id="price"
                   value={currentEvent.price}
