@@ -20,7 +20,6 @@ export default class AddEvent extends Component {
     this.onChangePrice = this.onChangePrice.bind(this);
     this.saveEvent = this.saveEvent.bind(this);
     this.newEvent = this.newEvent.bind(this);
-
     this.state = {
       id: null,
       title: "",
@@ -202,15 +201,19 @@ export default class AddEvent extends Component {
                     dateFormat="dd/MM/yyyy"
                     minDate={new Date()}
                     />
-                  <TextData control='input' type="text"
+
+                  <TextData control="input" type="time"
                     className="form-control"
                     id="startTime"
-                    required
-                    label='Start Time'
+                    required 
+                    label='Start Time' 
                     value={this.state.startTime}
                     onChange={this.onChangeStartTime}
                     name="startTime" />
-                  <TextData control='input' type="text"
+
+
+
+                  <TextData control='input' type="time"
                     className="form-control"
                     id="endTime"
                     required
@@ -232,13 +235,13 @@ export default class AddEvent extends Component {
                     className="form-control"
                     id="availability" 
                     required
-                    label='Availability' min="0" oninput="this.value=!!(this.value && Math.abs(this.value)>=0?Math.abs(this.value):null"
+                    label='Availability' min="1" oninput="this.value=!!(this.value && Math.abs(this.value)>=0?Math.abs(this.value):null"
                     value={this.state.availability}
                     onChange={this.onChangeAvailability}
                     name="availability" />
                   <TextData control='input' type="number"
                     className="form-control"
-                    id="price"   min="0" oninput="this.value=!!(this.value && Math.abs(this.value)>=0?Math.abs(this.value):null"
+                    id="price"   min="1" oninput="this.value=!!(this.value && Math.abs(this.value)>=0?Math.abs(this.value):null"
                     required
                     label='Price'
                     value={this.state.price}
